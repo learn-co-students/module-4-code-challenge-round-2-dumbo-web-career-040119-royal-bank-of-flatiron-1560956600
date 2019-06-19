@@ -9,6 +9,7 @@ class App extends Component {
       <div className="ui raised segment">
         <div className="ui segment pink inverted">
           <h2>The Royal Bank of Flatiron</h2>
+          <img src="https://image.flaticon.com/icons/svg/138/138305.svg" width='50' height='50'/>
         </div>
 
         <AccountContainer />
