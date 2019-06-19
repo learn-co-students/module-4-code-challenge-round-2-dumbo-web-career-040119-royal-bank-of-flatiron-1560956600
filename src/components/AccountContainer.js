@@ -19,11 +19,11 @@ class AccountContainer extends Component {
   }
 
   render() {
-
+    // console.log(this.props.transactions);
     return (
       <div>
-        <Search />
-        <TransactionsList />
+        <Search handleSearch={this.props.handleSearch}/>
+        <TransactionsList newArr={this.props.newArr} transactions={this.props.transactions} />
       </div>
     )
   }

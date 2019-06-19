@@ -1,15 +1,42 @@
-import React from 'react'
+import React, { Component } from 'react';
 
-const Search = () => {
-  return (
-    <div className="ui huge fluid icon input">
-      <input
-        type="text"
-        placeholder={"Search your Recent Transactions"}
-      />
-      <i className="circular search link icon"></i>
-    </div>
-  )
+class Search extends Component {
+
+
+
+  handleChange = (event) => {
+    this.props.handleSearch(event.target.value)
+  }
+
+  render() {
+    return (
+      <div className="ui huge fluid icon input">
+        <input
+          onChange={this.handleChange}
+          type="text"
+          placeholder={"Search your Recent Transactions"}
+          />
+        <i className="circular search link icon"></i>
+      </div>
+    );
+  }
+
 }
 
-export default Search
+export default Search;
+
+
+
+
+//
+// return (
+//   <div className="ui huge fluid icon input">
+//     <input
+//
+//       type="text"
+//       placeholder={"Search your Recent Transactions"}
+//       />
+//     <i className="circular search link icon"></i>
+//   </div>
+// )
+// }
