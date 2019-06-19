@@ -38,5 +38,3 @@ class AccountContainer extends Component {
 }
 
 export default AccountContainer
-
-//this.state.transactions.filter(transaction => transaction.name.toLowerCase().includes(this.state.search.toLowerCase()))
