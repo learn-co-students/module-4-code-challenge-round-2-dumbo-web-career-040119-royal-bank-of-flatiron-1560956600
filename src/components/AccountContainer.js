@@ -8,7 +8,7 @@ class AccountContainer extends Component {
 
   state = {
     transactions: [],
-    searchFilter: []
+    searchFilter: "",
   }
 
     // get a default state working with the data imported from TransactionsData
@@ -33,25 +33,28 @@ class AccountContainer extends Component {
   //   }, () => console.log(this.state.searchFilter))
   // }
 
-  handleChange = (event, { value }) => {
-     this.setState({ searchFilter: value })
+  handleChange = (event) => {
+     this.setState({
+       searchFilter: event.target.value
+     })
    }
 
-   filterChange = () => {
-     let array = this.state.transactions
-     let filteredlist = array.filter(list => list.description.toLowerCase().includes(this.state.searchFilter))
-     return filteredlist
-   }
+   // filterChange = () => {
+   //   let array = this.state.transactions
+   //   let filteredlist = array.filter(list => list.description.toLowerCase().includes(this.state.searchFilter))
+   //   return filteredlist
+   // }
 
   render() {
-
+    console.log(this.state.searchFilter)
     return (
       <div>
         <Search
-         onSearchChange={this.handleChange}
-         showNoResults={false}/>
+         searchFilter={this.state.searchFilter}
+         handleChange={this.handleChange}
+         />
         <TransactionsList
-         transactions={this.filterChange()}/>
+         transactions={this.state.transactions.filter(transaction => transaction.description.toLowerCase().includes(this.state.searchFilter.toLowerCase()))}/>
       </div>
     )
   }
