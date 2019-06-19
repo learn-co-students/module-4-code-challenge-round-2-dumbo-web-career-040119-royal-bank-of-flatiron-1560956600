@@ -4,6 +4,21 @@ import Search from './Search'
 import {transactions} from '../transactionsData'
 
 class AccountContainer extends Component {
+  
+
+  state = {
+    transactions : []
+  }
+
+  componentDidMount(){
+    fetch('https://boiling-brook-94902.herokuapp.com/transactions')
+    .then(res => res.json())
+    .then(data => {
+      this.setState({
+        transactions : data
+      })
+    })
+  }
 
   constructor() {
     super()
@@ -23,7 +38,7 @@ class AccountContainer extends Component {
     return (
       <div>
         <Search />
-        <TransactionsList />
+        <TransactionsList accountTransactions={this.state.transactions}/>
       </div>
     )
   }
