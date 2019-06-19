@@ -13,7 +13,6 @@ class Search extends Component {
   }
 
   handleChange = () => {
-    console.log("hehehehehshetnes", this.state.userInput)
     this.props.handleChange(this.state.userInput)
   }
 

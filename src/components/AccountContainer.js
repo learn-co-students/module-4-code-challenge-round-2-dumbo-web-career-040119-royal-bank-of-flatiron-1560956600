@@ -30,7 +30,6 @@ class AccountContainer extends Component {
 
   filter = () => {
     return this.state.transactions.filter(transaction => {
-      debugger
       return transaction.category.toLowerCase().includes(this.state.userInput.toLowerCase())
     })
   }
