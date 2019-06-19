@@ -13,3 +13,9 @@
   padding: 20px;
   color: white;
 }
+
+body {
+  background-color: pink;
+}
+
+@primaryColor   : @pink;
